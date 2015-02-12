@@ -7,16 +7,54 @@
 //
 
 #import "AppDelegate.h"
+#import "Osoba.h"   //1.
+#import "NSManagedObject+CRUD.h"    //2.
 
-@interface AppDelegate ()
+@interface AppDelegate () {
+    NSArray *peopleToAdd;
+    NSArray *wczyt;
+}
 
 @end
 
 @implementation AppDelegate
 
+- (void)createSampleData {
+    
+    peopleToAdd =
+    [NSArray arrayWithObjects:
+     [NSArray arrayWithObjects:@"Piotr", @"Młynarski", @"90041600990", nil],
+     [NSArray arrayWithObjects:@"Krzysztof", @"Hołtyn", @"91019000990", nil],
+     [NSArray arrayWithObjects:@"Aleksandra", @"Blendowska", @"95010900991", nil]
+     , nil];
+    
+    Osoba *newPerson = [Osoba createObject];
+    for (NSArray *osoby in peopleToAdd) {
+        
+        newPerson.imie = [osoby objectAtIndex:0];
+        newPerson.nazwisko = [osoby objectAtIndex:1];
+        newPerson.pesel = [osoby objectAtIndex:2];
+        NSLog(@"Tworzenie: %@ %@ %@...", newPerson.imie, newPerson.nazwisko, newPerson.pesel);
+
+    }
+    
+    //[Osoba saveDatabase];
+    
+ 
+    /*wczyt = [Osoba readAllObjects];
+    for (NSArray *osoby2 in wczyt) {
+        //NSLog(@"Znaleziono w bazie danych: %@....", [osoby2 objectAtIndex:0]);
+    }*/
+
+    
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //[self createSampleData];
+    //[self.window makeKeyAndVisible];
+    
     return YES;
 }
 

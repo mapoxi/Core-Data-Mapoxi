@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Osoba" representedClassName="Osoba" syncable="YES">
+        <attribute name="imie" attributeType="String" syncable="YES"/>
+        <attribute name="nazwisko" attributeType="String" syncable="YES"/>
+        <attribute name="pesel" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Zadania" representedClassName="Zadania" syncable="YES">
+        <attribute name="isDone" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="opis" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="temat" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Osoba" positionX="-9477" positionY="-1746" width="126" height="90"/>
+        <element name="Zadania" positionX="-9261" positionY="-1971" width="128" height="90"/>
+    </elements>
 </model>
